@@ -8,7 +8,7 @@ public record DashboardVisaoGeralResponse(
         Long produtosZerados,
         Long clientesAtivos,
         Long vendasSemana,
-        String planoUsuario,
+        PlanoDTO planoUsuario,
         List<String> alertas
 ) {
 }

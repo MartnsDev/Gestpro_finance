@@ -1,9 +1,6 @@
 package br.com.gestpro.gestpro_backend.api.controller.modules;
 
-import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.DashboardVisaoGeralResponse;
-import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.MetodoPagamentoDTO;
-import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.ProdutoVendasDTO;
-import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.VendasDiariasDTO;
+import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.*;
 import br.com.gestpro.gestpro_backend.domain.service.modulesService.dashboard.DashboardServiceInterface;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -34,7 +31,7 @@ public class DashboardController {
         Long produtosZerados = dashboardService.produtosZerados(emailUsuario);
         Long clientesAtivos = dashboardService.clientesAtivos(emailUsuario);
         Long vendasSemana = dashboardService.vendasSemana(emailUsuario);
-        String plano = dashboardService.planoUsuarioLogado(emailUsuario);
+        PlanoDTO planoUsuario = dashboardService.planoUsuarioLogado(emailUsuario); // <-- PlanoDTO direto
 
         List<String> alertas = Stream.concat(
                 dashboardService.alertasProdutosZerados(emailUsuario).stream(),
@@ -42,7 +39,7 @@ public class DashboardController {
         ).toList();
 
         DashboardVisaoGeralResponse response = new DashboardVisaoGeralResponse(
-                totalVendas, produtosEstoque, produtosZerados, clientesAtivos, vendasSemana, plano, alertas
+                totalVendas, produtosEstoque, produtosZerados, clientesAtivos, vendasSemana, planoUsuario, alertas
         );
 
         return ResponseEntity.ok(response);

@@ -1,6 +1,7 @@
 package br.com.gestpro.gestpro_backend.domain.service.modulesService.dashboard;
 
 import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.MetodoPagamentoDTO;
+import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.PlanoDTO;
 import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.ProdutoVendasDTO;
 import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.VendasDiariasDTO;
 
@@ -17,7 +18,7 @@ public interface DashboardServiceInterface {
 
     Long vendasSemana(String email);
 
-    String planoUsuarioLogado(String email);
+    PlanoDTO planoUsuarioLogado(String email);
 
     List<String> alertasProdutosZerados(String email);
 

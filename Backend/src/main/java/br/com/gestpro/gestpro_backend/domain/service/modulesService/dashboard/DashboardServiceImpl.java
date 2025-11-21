@@ -1,6 +1,7 @@
 package br.com.gestpro.gestpro_backend.domain.service.modulesService.dashboard;
 
 import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.MetodoPagamentoDTO;
+import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.PlanoDTO;
 import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.ProdutoVendasDTO;
 import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.VendasDiariasDTO;
 import br.com.gestpro.gestpro_backend.domain.repository.modules.DashboardRepository;
@@ -85,8 +86,8 @@ public class DashboardServiceImpl implements DashboardServiceInterface {
      */
     @Override
     @Transactional
-    public String planoUsuarioLogado(String emailUsuario) {
-        return visaoGeralOperation.planoUsuarioLogado(emailUsuario).toString();
+    public PlanoDTO planoUsuarioLogado(String emailUsuario) {
+        return visaoGeralOperation.planoUsuarioLogado(emailUsuario);
     }
 
     /**
