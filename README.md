@@ -46,7 +46,7 @@ Dashboard
 
 Cadastro
 ---
-[![GestPro - Cadastro](https://raw.githubusercontent.com/MartnsDev/GestPro/e4d4f8dedf1c2cc5be331d594f8819a56732d089/gestpro-cadastro.png)](https://github.com/MartnsDev/GestPro/blob/e4d4f8dedf1c2cc5be331d594f8819a56732d089/gestpro-cadastro.png)
+[![GestPro - Cadastro](https://github.com/MartnsDev/Gest-Pro/blob/2ced41f10df3341faa91cdcd0596061cfdcbc920/Img/gestpro-cadastro.png)
 
 Redefinir Senha
 ---
@@ -70,9 +70,8 @@ Backend totalmente integrado com frontend Next.js
 ```
 📡 Links Úteis
 
-[Frontend README](https://github.com/MartnsDev/GestPro/tree/e4fb6426163f44c154645ca89e9fec5c202cd5a4/gestpro-frontEnd) 
-
-[Backend README](https://github.com/MartnsDev/GestPro/tree/a85fc18b536b9436a3f4a29e222f36499dd38729/gestpro-backend)
+[Frontend README](https://github.com/MartnsDev/Gest-Pro/tree/2ced41f10df3341faa91cdcd0596061cfdcbc920/FrontEnd) 
+[Backend README](https://github.com/MartnsDev/Gest-Pro/tree/2ced41f10df3341faa91cdcd0596061cfdcbc920/Backend)
 
 🧩 Próximos Passos
 ```
@@ -87,7 +86,7 @@ Suporte a múltiplas lojas
 
 ## Documentação Swagger
 ---
-![Documentaçãp Swagger](https://github.com/MartnsDev/GestPro/blob/166f34bb225aab4a03638fdd8875a099e9c281f0/Documenta%C3%A7%C3%A3o-Swagger.png)
+![Documentaçãp Swagger](https://github.com/MartnsDev/Gest-Pro/blob/2ced41f10df3341faa91cdcd0596061cfdcbc920/Img/Documenta%C3%A7%C3%A3o-Swagger.png)
 
 📜 Licença
 ```
