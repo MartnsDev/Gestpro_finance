@@ -50,7 +50,7 @@ Cadastro
 
 Redefinir Senha
 ---
-![GestPro - Redefinir senha](https://raw.githubusercontent.com/MartnsDev/GestPro/2cfe960441d520780913fad82384d5355a501bbf/gestpro-redefinir-senha.png)
+![GestPro - Redefinir senha](https://github.com/MartnsDev/Gest-Pro/blob/8b390608e23256ca71fb5e4ce190dfa55f4efa58/Img/gestpro-redefinir-senha.png)
 
 
 
