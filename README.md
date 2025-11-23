@@ -34,7 +34,7 @@ GestPro/
 ```
 Cada pasta possui seu próprio README detalhado com instruções de configuração, execução e screenshots.
 
-📸 Screenshots do Sistema
+Screenshots do Sistema
 
 Login
 ---
@@ -43,15 +43,6 @@ Login
 Dashboard
 ---
 ![GestPro - Dashboard](https://github.com/MartnsDev/GestPro/blob/c5c9a65498392bcf967d656b2d120c502a20fb96/gestpro.png)
-
-Cadastro
----
-[![GestPro - Cadastro](https://github.com/MartnsDev/Gest-Pro/blob/2ced41f10df3341faa91cdcd0596061cfdcbc920/Img/gestpro-cadastro.png)
-
-Redefinir Senha
----
-![GestPro - Redefinir senha](https://github.com/MartnsDev/Gest-Pro/blob/8b390608e23256ca71fb5e4ce190dfa55f4efa58/Img/gestpro-redefinir-senha.png)
-
 
 
 🔐 Funcionalidades Principais
@@ -96,3 +87,10 @@ Todos os direitos reservados a Matheus Martins (MartnsDev).
 
 Feito com 💚 por Matheus Martins [Linkedin](https://www.linkedin.com/in/matheusmartnsdev/)
 
+Cadastro
+---
+![GestPro - Cadastro](https://github.com/MartnsDev/Gest-Pro/blob/2ced41f10df3341faa91cdcd0596061cfdcbc920/Img/gestpro-cadastro.png)
+
+Redefinir Senha
+---
+![GestPro - Redefinir senha](https://github.com/MartnsDev/Gest-Pro/blob/8b390608e23256ca71fb5e4ce190dfa55f4efa58/Img/gestpro-redefinir-senha.png)
