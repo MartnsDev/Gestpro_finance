@@ -49,6 +49,13 @@ public class Caixa {
     @Column(nullable = false)
     private Boolean aberto = true;
 
+    @Column(name = "aberto_por", nullable = false)
+    private String abertoPor;
+
+    @Column(name = "fechado_por")
+    private String fechadoPor;
+
+
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
@@ -76,7 +83,7 @@ public class Caixa {
     public void recalcularTotalVendas() {
         this.totalVendas = vendas.stream()
                 .filter(Objects::nonNull)
-                .map(Venda::getTotal) // ajuste para seu getter real
+                .map(Venda::getTotal)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
@@ -85,6 +92,6 @@ public class Caixa {
         this.dataFechamento = LocalDateTime.now();
         this.aberto = false;
         this.status = StatusCaixa.FECHADO;
-        // note: armazene quem fechou se quiser (fechadoPor) - ou use audit
+        // Opção de dizer quem fechou (fechadoPor) - Adicionável
     }
 }
