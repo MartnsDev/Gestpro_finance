@@ -116,19 +116,22 @@ public class DashboardServiceImpl implements DashboardServiceInterface {
 
     // Graficos
     @Override
-    @Transactional
+    @Cacheable(cacheNames = "grafico-metodos", key = "#email", unless = "#result == null || #result.isEmpty()")
+    @Transactional(readOnly = true)
     public List<MetodoPagamentoDTO> vendasPorMetodoPagamento(String email) {
         return graficoServiceOperation.vendasPorMetodoPagamento(email);
     }
 
     @Override
-    @Transactional
+    @Cacheable(cacheNames = "grafico-produtos", key = "#email", unless = "#result == null || #result.isEmpty()")
+    @Transactional(readOnly = true)
     public List<ProdutoVendasDTO> vendasPorProduto(String email) {
         return graficoServiceOperation.vendasPorProduto(email);
     }
 
     @Override
-    @Transactional
+    @Cacheable(cacheNames = "grafico-vendas-diarias", key = "#email")
+    @Transactional(readOnly = true)
     public List<VendasDiariasDTO> vendasDiariasSemana(String email) {
         return graficoServiceOperation.vendasDiariasSemana(email);
     }

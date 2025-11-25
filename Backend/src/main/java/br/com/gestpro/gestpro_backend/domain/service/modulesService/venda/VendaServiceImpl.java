@@ -57,7 +57,7 @@ public class VendaServiceImpl implements VendaServiceInterface {
      */
     @Override
     @Transactional
-    @CacheEvict(cacheNames = "dashboard", key = "#dto.emailUsuario")
+    @CacheEvict(value = {"dashboard-v2", "grafico-metodos", "grafico-produtos", "grafico-vendas-diarias"}, key = "#email")
     public Venda registrarVenda(RegistrarVendaDTO dto) {
         if (dto.getItens() == null || dto.getItens().isEmpty()) {
             throw new ApiException("Nenhum item enviado para a venda", HttpStatus.BAD_REQUEST, "/api/vendas");
