@@ -17,11 +17,5 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
     // Produtos com estoque zero
     List<Produto> findByQuantidadeEstoqueAndUsuarioEmail(int quantidade, String email);
 
-    // Contagem de produtos em estoque
-    Long countByQuantidadeEstoqueGreaterThanAndUsuarioEmail(int quantidade, String email);
-
-    // Contagem de produtos zerados
-    Long countByQuantidadeEstoqueAndUsuarioEmail(int quantidade, String email);
-
 
 }

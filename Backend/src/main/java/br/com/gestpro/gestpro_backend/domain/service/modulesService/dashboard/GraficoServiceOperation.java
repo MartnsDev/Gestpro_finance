@@ -3,6 +3,7 @@ package br.com.gestpro.gestpro_backend.domain.service.modulesService.dashboard;
 import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.MetodoPagamentoDTO;
 import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.ProdutoVendasDTO;
 import br.com.gestpro.gestpro_backend.api.dto.modules.dashboard.VendasDiariasDTO;
+import br.com.gestpro.gestpro_backend.domain.model.enums.FormaDePagamento;
 import br.com.gestpro.gestpro_backend.domain.repository.auth.UsuarioRepository;
 import br.com.gestpro.gestpro_backend.domain.repository.modules.GraficoRepository;
 import br.com.gestpro.gestpro_backend.infra.exception.ApiException;
@@ -25,7 +26,8 @@ public class GraficoServiceOperation {
     private final GraficoRepository graficoRepository;
     private final UsuarioRepository usuarioRepository;
 
-    public GraficoServiceOperation(GraficoRepository graficoRepository, UsuarioRepository usuarioRepository) {
+    public GraficoServiceOperation(GraficoRepository graficoRepository,
+                                   UsuarioRepository usuarioRepository) {
         this.graficoRepository = graficoRepository;
         this.usuarioRepository = usuarioRepository;
     }
@@ -43,7 +45,7 @@ public class GraficoServiceOperation {
 
         return raw.stream()
                 .map(o -> {
-                    var forma = (br.com.gestpro.gestpro_backend.domain.model.enums.FormaDePagamento) o[0];
+                    var forma = (FormaDePagamento) o[0];
                     var total = ((Number) o[1]).longValue();
                     return new MetodoPagamentoDTO(forma, total); // seu construtor aceita (FormaDePagamento, Long)
                 })
@@ -58,8 +60,8 @@ public class GraficoServiceOperation {
     @Transactional(readOnly = true)
     public List<ProdutoVendasDTO> vendasPorProduto(String email) {
         // Repo já fornece ProdutoVendasDTO via constructor expression (nome, SUM(qtd))
-        List<ProdutoVendasDTO> raw = graficoRepository.countVendasPorProdutoDTO(email);
-        return raw;
+        List<ProdutoVendasDTO> response = graficoRepository.countVendasPorProdutoDTO(email);
+        return response;
     }
 
     /**
