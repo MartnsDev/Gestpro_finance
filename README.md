@@ -433,15 +433,43 @@ O Google vai gerar uma senha parecida com:
 abcd efgh ijkl mnop
 ```
 
-Após configurar tudo do EmailSender:
+## Fluxo de emails após configurar o Email Sender
 
-Código de confirmação de conta:
+Depois que o Email Sender estiver configurado corretamente, o sistema passa a enviar emails automáticos para validação de ações importantes do usuário.
 
-![EmailSender — Código Confirmação](Img/Confirmar-email_gestpro.png)<br>
+Esses emails fazem parte da segurança e da experiência do sistema.
 
-Codigo redefinir senha: <br>
+---
 
-![EmailSender — Código Mudar senha](Img/Mudar-senha-Gestpro.png)
+## Confirmação de conta
+
+Quando o usuário cria uma conta, o sistema envia um email contendo um **código de confirmação**.
+
+Esse código é usado para validar que o email realmente pertence ao usuário e ativar a conta.
+
+Exemplo do email de confirmação enviado pelo sistema:
+
+![EmailSender — Código de Confirmação de Conta](Img/Confirmar-email_gestpro.png)
+
+---
+
+## Redefinição de senha
+
+Quando o usuário solicita a recuperação de senha, o sistema envia um **código temporário** para redefinição.
+
+Esse código garante que apenas o dono do email consiga alterar a senha da conta.
+
+Exemplo do email de redefinição de senha:
+
+![EmailSender — Código para Redefinir Senha](Img/Mudar-senha-Gestpro.png)
+
+---
+
+## Observação importante
+
+Os códigos enviados por email possuem tempo de expiração e uso único, aumentando a segurança do sistema.
+
+Esse fluxo é essencial em aplicações reais e segue o padrão utilizado em sistemas profissionais.
 
 ## Documentação Swagger
 ---
