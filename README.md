@@ -493,12 +493,15 @@ O sistema envia um código temporário por email, que deve ser informado para cr
 
 ![GestPro - Redefinir Senha](https://github.com/MartnsDev/Gest-Pro/blob/8b390608e23256ca71fb5e4ce190dfa55f4efa58/Img/gestpro-redefinir-senha.png)
 
----
-
-# Licença
+------
+## Licença
 ```
-Este projeto não pode ser copiado, reproduzido ou utilizado sem autorização do autor.
+Este projeto não pode ser copiado, reproduzido ou utilizado sem autorização do autor.  
 Todos os direitos reservados a Matheus Martins (MartnsDev).
 ```
+Caso tenha qualquer dúvida, sugestão ou queira conversar sobre o projeto, fique à vontade para entrar em contato.  
+Feedbacks e trocas de ideia são sempre bem vindos.
 
-Feito com 💚 por Matheus Martins [Linkedin](https://www.linkedin.com/in/matheusmartnsdev/)
+Feito com 💚 por Matheus Martins  
+[LinkedIn](https://www.linkedin.com/in/matheusmartnsdev/)
+
