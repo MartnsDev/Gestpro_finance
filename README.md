@@ -21,7 +21,8 @@ O sistema inclui login, cadastro, recuperação de senha, dashboard, controle de
 - OAuth2 (Login com Google)
 - MySQL 8+
 - Maven
-
+- Swagger
+- Redis
 ---
 
 ## 📂 Estrutura do Repositório
@@ -30,18 +31,23 @@ O sistema inclui login, cadastro, recuperação de senha, dashboard, controle de
 GestPro/
 ├── frontend/      # Interface do usuário (Next.js)
 ├── backend/       # API e regras de negócio (Spring Boot)
+├── Img/           # Imagens para desenvolver o Readme
 └── README.md      # Este arquivo
 ```
-Cada pasta possui seu próprio README detalhado com instruções de configuração, execução e screenshots.
+## Tela de Login
 
-Screenshots do Sistema
+A tela de login é o ponto de entrada do sistema.  
+Nela o usuário pode acessar a conta usando email e senha ou autenticação integrada, garantindo segurança e praticidade no acesso.
 
-Login
+![Tela de login do GestPro](https://raw.githubusercontent.com/MartnsDev/Gest-Pro/b22799e9e53523f9b9442e41db645f729c92247c/Img/gestpro-login.png)
+
 ---
-![Tela de login do Gest-Pro](https://raw.githubusercontent.com/MartnsDev/Gest-Pro/b22799e9e53523f9b9442e41db645f729c92247c/Img/gestpro-login.png)
 
-Dashboard
----
+## Dashboard
+
+O dashboard é a área principal do sistema após o login.  
+Aqui o usuário tem uma visão geral das informações mais importantes, atalhos rápidos e acesso às funcionalidades do GestPro.
+
 ![GestPro - Dashboard](https://github.com/MartnsDev/Gest-Pro/blob/c7f08fcf4571fefae78d8af88cb5fca656c48328/Img/Gest-Pro_Dashboard.png)
 
 
@@ -61,19 +67,8 @@ Backend totalmente integrado com frontend Next.js
 ```
 📡 Links Úteis
 
-[Frontend README](https://github.com/MartnsDev/Gest-Pro/tree/2ced41f10df3341faa91cdcd0596061cfdcbc920/FrontEnd) 
-[Backend README](https://github.com/MartnsDev/Gest-Pro/tree/2ced41f10df3341faa91cdcd0596061cfdcbc920/Backend)
-
-🧩 Próximos Passos
-```
-Implementar módulos de Produtos, Estoque, Vendas, Clientes e Relatórios
-
-Adicionar testes unitários e de integração
-
-Implementar notificações em tempo real
-
-Suporte a múltiplas lojas
-```
+[Frontend](https://github.com/MartnsDev/Gest-Pro/tree/2ced41f10df3341faa91cdcd0596061cfdcbc920/FrontEnd) 
+[Backend](https://github.com/MartnsDev/Gest-Pro/tree/2ced41f10df3341faa91cdcd0596061cfdcbc920/Backend)
 
 # Como baixar e executar o projeto
 
