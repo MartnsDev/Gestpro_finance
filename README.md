@@ -472,18 +472,35 @@ Os códigos enviados por email possuem tempo de expiração e uso único, aument
 Esse fluxo é essencial em aplicações reais e segue o padrão utilizado em sistemas profissionais.
 
 ## Documentação Swagger
----
-![Documentaçãp Swagger](https://github.com/MartnsDev/Gest-Pro/blob/2ced41f10df3341faa91cdcd0596061cfdcbc920/Img/Documenta%C3%A7%C3%A3o-Swagger.png)
 
-Cadastro
+A aplicação possui documentação interativa gerada automaticamente com Swagger.  
+Por meio dela é possível visualizar todas as rotas disponíveis, parâmetros, payloads, respostas e testar a API diretamente pelo navegador.
+
+Essa documentação facilita o desenvolvimento, testes e integração com o frontend.
+
+![Documentação Swagger](https://github.com/MartnsDev/Gest-Pro/blob/2ced41f10df3341faa91cdcd0596061cfdcbc920/Img/Documenta%C3%A7%C3%A3o-Swagger.png)
+
 ---
+
+## Tela de Cadastro
+
+A tela de cadastro permite a criação de novas contas no sistema.  
+Após o cadastro, o usuário recebe um email de confirmação para ativar a conta, garantindo segurança e validade do email informado.
+
 ![GestPro - Cadastro](https://github.com/MartnsDev/Gest-Pro/blob/2ced41f10df3341faa91cdcd0596061cfdcbc920/Img/gestpro-cadastro.png)
 
-Redefinir Senha
 ---
-![GestPro - Redefinir senha](https://github.com/MartnsDev/Gest-Pro/blob/8b390608e23256ca71fb5e4ce190dfa55f4efa58/Img/gestpro-redefinir-senha.png)
 
-� Licença
+## Redefinição de Senha
+
+A funcionalidade de redefinição de senha permite que o usuário recupere o acesso à conta de forma segura.  
+O sistema envia um código temporário por email, que deve ser informado para criar uma nova senha.
+
+![GestPro - Redefinir Senha](https://github.com/MartnsDev/Gest-Pro/blob/8b390608e23256ca71fb5e4ce190dfa55f4efa58/Img/gestpro-redefinir-senha.png)
+
+---
+
+# Licença
 ```
 Este projeto não pode ser copiado, reproduzido ou utilizado sem autorização do autor.
 Todos os direitos reservados a Matheus Martins (MartnsDev).
