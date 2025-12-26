@@ -435,10 +435,12 @@ abcd efgh ijkl mnop
 
 Após configurar tudo do EmailSender:
 
-Código de confirmação de conta: 
-![EmailSender — Código Confirmação](Img/Confirmar-email_gestpro.png)
+Código de confirmação de conta:
 
-Codigo redefinir senha:
+![EmailSender — Código Confirmação](Img/Confirmar-email_gestpro.png)<br>
+
+Codigo redefinir senha: <br>
+
 ![EmailSender — Código Mudar senha](Img/Mudar-senha-Gestpro.png)
 
 ## Documentação Swagger
