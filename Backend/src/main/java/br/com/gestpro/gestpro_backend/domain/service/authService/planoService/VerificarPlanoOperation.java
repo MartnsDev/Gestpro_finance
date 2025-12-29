@@ -56,7 +56,13 @@ public class VerificarPlanoOperation {
                 }
             }
         }
-
+        if (usuario.getStatusAcesso() == StatusAcesso.INATIVO) {
+            throw new ApiException(
+                    "Usuário inativo. Redirecionar para pagamento.",
+                    HttpStatus.FORBIDDEN,
+                    "/pagamento"
+            );
+        }
         // Salva apenas se alguma alteração foi feita
         if (precisaSalvar) {
             usuarioRepository.save(usuario);

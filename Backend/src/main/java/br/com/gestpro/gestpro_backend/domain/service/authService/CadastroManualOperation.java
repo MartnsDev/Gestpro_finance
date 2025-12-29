@@ -36,8 +36,7 @@ public class CadastroManualOperation {
     }
 
     @Transactional
-    public Usuario execute(String nome, String email, String senha, MultipartFile foto,
-                           String baseUrl, String path) throws IOException {
+    public Usuario execute(String nome, String email, String senha, MultipartFile foto, String baseUrl, String path) throws IOException {
 
         validarCampos(email, senha, path);
 
@@ -72,9 +71,8 @@ public class CadastroManualOperation {
             );
         }
 
-        // ==========================
+
         // 4️⃣ Novo cadastro
-        // ==========================
         Usuario usuario = criarNovoUsuario(nome, email, senha, foto);
         usuarioRepository.save(usuario);
 
@@ -82,9 +80,8 @@ public class CadastroManualOperation {
         return usuario;
     }
 
-    // ==============================
-    // 🔹 Métodos auxiliares
-    // ==============================
+
+    // Métodos auxiliares
     private void validarCampos(String email, String senha, String path) {
         if (email == null || email.isBlank()) {
             throw new ApiException("O e-mail é obrigatório.", HttpStatus.BAD_REQUEST, path);

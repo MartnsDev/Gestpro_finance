@@ -31,9 +31,8 @@ public class UpdatePasswordService {
         this.emailService = emailService;
     }
 
-    // ============================
+
     // 1. Enviar código de verificação
-    // ============================
     public void sendVerificationCode(String email) {
         Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new ApiException("Email não encontrado", HttpStatus.NOT_FOUND, "/update-password"));
@@ -57,9 +56,8 @@ public class UpdatePasswordService {
         System.out.println("Código enviado para " + email + ": " + codigo);
     }
 
-    // ============================
+
     // 2. Redefinir senha
-    // ============================
     public void resetPassword(String email, String codigo, String novaSenha) {
         Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new ApiException("Usuário não encontrado", HttpStatus.NOT_FOUND, "/update-password"));
@@ -89,18 +87,16 @@ public class UpdatePasswordService {
         System.out.println("Senha atualizada para " + email);
     }
 
-    // ============================
+
     // Gera código aleatório de 6 dígitos
-    // ============================
     private String gerarCodigo() {
         Random random = new Random();
         int numero = 100000 + random.nextInt(900000); // 100000 a 999999
         return String.valueOf(numero);
     }
 
-    // ============================
+
     // Classe interna para armazenar código + expiração
-    // ============================
     private static class VerificationCode {
         private final String codigo;
         private final LocalDateTime expiracao;

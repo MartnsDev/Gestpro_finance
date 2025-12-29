@@ -40,6 +40,14 @@ public class AtualizarPlanoOperation {
             dataAtualExpiracao = agora;
         }
 
+        if (usuario.getStatusAcesso() == StatusAcesso.INATIVO) {
+            throw new ApiException(
+                    "Usuário inativo. Redirecionar para pagamento.",
+                    HttpStatus.FORBIDDEN,
+                    "/pagamento"
+            );
+        }
+
         // Soma os dias restantes aos dias do novo plano
         usuario.setDataAssinaturaPlus(dataAtualExpiracao.plusDays(duracaoDias));
         usuario.setTipoPlano(TipoPlano.ASSINANTE);
