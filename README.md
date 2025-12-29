@@ -357,28 +357,31 @@ GOOGLE_USERNAME_ATTR="sub"
 
 ---
 
-## 2 Configurar a Tela de Consentimento OAuth
+## Configurar a Tela de Consentimento OAuth
 
-No menu lateral, acesse:
+No menu lateral do Google Cloud Console, acesse:
 
-APIs e serviços  
-Tela de consentimento OAuth  
+APIs e No menu lateral do Google Cloud Console, acesse:
 
-Selecione o tipo:
+APIs e serviços
+→ Tela de consentimento OAuth
 
-Externo  
-
+Selecione o tipo de usuário:
+```
+Externo
+```
 Clique em Criar.
 
 Preencha os campos principais:
-
-Nome do app  
-Email de suporte  
-
-Os escopos podem ficar no padrão por enquanto.  
+```
+Nome do aplicativo
+Email de suporte
+```
+Os escopos podem permanecer no padrão neste momento.
 Salve e finalize a configuração.
 
-Mesmo em modo de teste isso já funciona para desenvolvimento.
+Mesmo em modo de teste, essa configuração já é suficiente para desenvolvimento local.
+
 
 ---
 
