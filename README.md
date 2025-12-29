@@ -17,13 +17,34 @@ GestPro é uma solução completa para gestão comercial que oferece controle de
 - **Gestão comercial**: Produtos, estoque, vendas e clientes
 - **Relatórios**: Análises e indicadores de performance
 
-### Screenshots
+## 📸 Interface do Sistema
 
-#### Tela de Login
-![Login](https://raw.githubusercontent.com/MartnsDev/Gest-Pro/b22799e9e53523f9b9442e41db645f729c92247c/Img/gestpro-login.png)
-
-#### Dashboard
-![Dashboard](https://github.com/MartnsDev/Gest-Pro/blob/c7f08fcf4571fefae78d8af88cb5fca656c48328/Img/Gest-Pro_Dashboard.png)
+<table>
+  <tr>
+    <td width="50%">
+      <h3 align="center">Tela de Login</h3>
+      <img src="Img/gestpro-login.png" alt="Tela de Login" />
+      <p align="center">Login com email/senha ou Google OAuth2</p>
+    </td>
+    <td width="50%">
+      <h3 align="center">Cadastro de Usuário</h3>
+      <img src="Img/gestpro-cadastro.png" alt="Tela de Cadastro" />
+      <p align="center">Cadastro com validação de email</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3 align="center">Recuperação de Senha</h3>
+      <img src="Img/gestpro-redefinir-senha.png" alt="Recuperar Senha" />
+      <p align="center">Reset de senha via email</p>
+    </td>
+    <td width="50%">
+      <h3 align="center">Dashboard Principal</h3>
+      <img src="Img/Gest-Pro_Dashboard.png" alt="Dashboard" />
+      <p align="center">Visão geral do negócio</p>
+    </td>
+  </tr>
+</table>
 
 ## 🚀 Tecnologias
 
@@ -54,30 +75,54 @@ GestPro/
 └── README.md
 ```
 
-## ⚙️ Configuração e Instalação
+## 🚀 Quick Start
 
 ### Pré-requisitos
 
-- Java 17+
-- Node.js 18+
-- MySQL 8+
-- Redis
-- Maven
+- **Java 17+**
+- **Node.js 18+**
+- **MySQL 8+**
+- **Redis** (opcional, para caching)
+- **Maven** (incluído no projeto)
 
-### 1. Clone o Repositório
+### Instalação Rápida
 
 ```bash
+# 1. Clone o repositório
 git clone https://github.com/MartnsDev/Gest-Pro.git
 cd GestPro
+
+# 2. Configure as variáveis de ambiente (ver seção abaixo)
+
+# 3. Crie o banco de dados
+mysql -u root -p -e "CREATE DATABASE gestpro_db;"
+
+# 4. Inicie o backend
+cd backend
+./mvnw spring-boot:run
+
+# 5. Em outro terminal, inicie o frontend
+cd frontend
+npm install
+npm run dev
 ```
 
-### 2. Configuração do Backend
+**Acesse:**
+- Frontend: `http://localhost:3000`
+- Backend API: `http://localhost:8080`
+- Swagger: `http://localhost:8080/swagger-ui.html`
 
-#### 2.1 Variáveis de Ambiente
+---
 
-O projeto utiliza variáveis de ambiente para configuração. Crie e configure as seguintes variáveis:
+## ⚙️ Configuração Detalhada
 
-**Windows (PowerShell):**
+### Variáveis de Ambiente
+
+O projeto utiliza variáveis de ambiente para todas as configurações sensíveis. **Nunca commit credenciais no código.**
+
+### Configuração no Windows
+
+Use PowerShell para definir as variáveis de ambiente:
 ```powershell
 # Database
 setx DB_URL "jdbc:mysql://localhost:3306/gestpro_db"
@@ -126,9 +171,19 @@ setx MAIL_SMTP_AUTH "true"
 setx MAIL_SMTP_STARTTLS "true"
 ```
 
-**Linux/macOS (bash/zsh):**
+**Observação:** Feche e reabra o terminal para aplicar as variáveis.
 
-Adicione ao arquivo `~/.bashrc` ou `~/.zshrc`:
+---
+
+### Configuração no Linux/macOS
+
+Edite o arquivo de configuração do shell:
+
+```bash
+nano ~/.bashrc  # ou ~/.zshrc se usar zsh
+```
+
+Adicione as seguintes variáveis:
 
 ```bash
 # Database
@@ -179,82 +234,117 @@ export MAIL_SMTP_STARTTLS="true"
 ```
 
 Aplique as alterações:
+
 ```bash
 source ~/.bashrc  # ou source ~/.zshrc
 ```
 
-#### 2.2 Configuração do Banco de Dados
-
-```bash
-# Crie o banco de dados MySQL
-mysql -u root -p
-CREATE DATABASE gestpro_db;
-exit;
-```
-
-#### 2.3 Execute o Backend
-
-```bash
-cd backend
-./mvnw spring-boot:run
-```
-
-O backend estará disponível em `http://localhost:8080`
-
-### 3. Configuração do Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-O frontend estará disponível em `http://localhost:3000`
+---
 
 ## 🔐 Configurações Adicionais
 
-### OAuth2 - Google Login
+### OAuth2 - Login com Google
 
-Para habilitar login com Google:
+Para habilitar o login com Google, siga os passos abaixo:
 
-1. Acesse o [Google Cloud Console](https://console.cloud.google.com)
-2. Crie um novo projeto
-3. Ative a **OAuth consent screen**:
-   - Tipo: Externo
-   - Adicione nome do app e email de suporte
-4. Crie credenciais OAuth 2.0:
-   - Tipo: Aplicativo da Web
-   - URI de redirecionamento: `http://localhost:8080/login/oauth2/code/google`
-5. Copie o **Client ID** e **Client Secret** para as variáveis de ambiente
+#### 1. Criar Projeto no Google Cloud Console
 
-![Google Auth Setup](Img/Create-project_googleAuth.png)
+Acesse o [Google Cloud Console](https://console.cloud.google.com) e crie um novo projeto:
 
-### Envio de Email (Gmail)
+<img src="Img/Create-project_googleAuth.png" alt="Criar Projeto Google" width="600"/>
 
-Para habilitar envio de emails:
+#### 2. Configurar OAuth Consent Screen
 
-1. Acesse [Google Account Security](https://myaccount.google.com/security)
-2. Ative a **verificação em duas etapas**
-3. Gere uma **senha de app**:
-   - Nome sugerido: "GestPro Spring Boot"
-   - Use a senha gerada na variável `MAIL_PASSWORD`
+- No menu lateral, acesse **APIs e serviços → Tela de consentimento OAuth**
+- Selecione tipo: **Externo**
+- Preencha nome do aplicativo e email de suporte
 
-![Email Sender Setup](Img/emailsender-1.png)
+<img src="Img/Criar-um-cliente-auth.png" alt="Configurar OAuth" width="600"/>
 
-**Funcionalidades de Email:**
-- Confirmação de cadastro
-- Recuperação de senha
-- Notificações do sistema
+#### 3. Criar Credenciais OAuth 2.0
+
+- Acesse **Credenciais → Criar credenciais → ID do cliente OAuth**
+- Tipo de aplicativo: **Aplicativo da Web**
+
+<img src="Img/Criar-id-cliente-Auth.png" alt="Criar ID Cliente" width="600"/>
+
+#### 4. Configurar URI de Redirecionamento
+
+Adicione a seguinte URI autorizada:
+```
+http://localhost:8080/login/oauth2/code/google
+```
+
+#### 5. Copiar Credenciais
+
+Após criar, copie o **Client ID** e **Client Secret** e configure nas variáveis de ambiente:
+
+```bash
+GOOGLE_CLIENT_ID="seu_client_id_aqui"
+GOOGLE_CLIENT_SECRET="seu_client_secret_aqui"
+```
+
+---
+
+### Envio de Email via SMTP (Gmail)
+
+O sistema utiliza email para confirmação de cadastro e recuperação de senha.
+
+#### 1. Ativar Verificação em Duas Etapas
+
+Acesse [Google Account Security](https://myaccount.google.com/security) e ative a verificação em duas etapas.
+
+#### 2. Gerar Senha de Aplicativo
+
+<img src="Img/emailsender-1.png" alt="App Passwords Menu" width="600"/>
+
+Acesse **Senhas de app** e crie uma nova senha:
+
+<img src="Img/emailsender-2.png" alt="Criar App Password" width="600"/>
+
+#### 3. Configurar Variáveis de Ambiente
+
+Use a senha gerada (16 caracteres) na variável `MAIL_PASSWORD`:
+
+```bash
+MAIL_USERNAME="seu_email@gmail.com"
+MAIL_PASSWORD="xxxx xxxx xxxx xxxx"  # Senha de app gerada
+```
+
+#### Funcionalidades de Email Implementadas
+
+**Confirmação de Cadastro:**
+
+<img src="Img/Confirmar-email_gestpro.png" alt="Email de Confirmação" width="500"/>
+
+O usuário recebe um código de 6 dígitos com validade de 10 minutos para ativar a conta.
+
+**Recuperação de Senha:**
+
+<img src="Img/Mudar-senha-Gestpro.png" alt="Email Redefinição de Senha" width="500"/>
+
+Código temporário enviado para criar nova senha com segurança.
 
 ## 📚 Documentação da API
 
-A documentação interativa da API está disponível via Swagger:
+A API possui documentação interativa completa gerada com **Swagger/OpenAPI 3.0**.
 
+Acesse após iniciar o backend:
 ```
 http://localhost:8080/swagger-ui.html
 ```
 
-![Swagger Documentation](https://github.com/MartnsDev/Gest-Pro/blob/2ced41f10df3341faa91cdcd0596061cfdcbc920/Img/Documenta%C3%A7%C3%A3o-Swagger.png)
+<img src="Img/Documentação-Swagger.png" alt="Swagger UI" />
+
+### Principais Endpoints
+
+- **Autenticação**: Login, cadastro, confirmação de email
+- **Usuário**: Perfil, atualização de dados
+- **Produtos**: CRUD completo
+- **Estoque**: Controle de movimentações
+- **Vendas**: Registro e consulta
+- **Clientes**: Gestão de cadastro
+- **Relatórios**: Dashboards e analytics
 
 ## 🔒 Segurança
 
